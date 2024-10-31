@@ -265,7 +265,7 @@
           <Transition.To>
             <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="209,182" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
-                <TryCatch DisplayName="Try to process transaction" sap:VirtualizedContainerService.HintSize="506,835" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+                <TryCatch DisplayName="Try to process transaction" sap:VirtualizedContainerService.HintSize="510,1051" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -273,13 +273,13 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <TryCatch.Try>
-                    <Sequence DisplayName="Process the current TransactionItem" sap:VirtualizedContainerService.HintSize="468,585" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                    <Sequence DisplayName="Process the current TransactionItem" sap:VirtualizedContainerService.HintSize="472,801" sap2010:WorkflowViewState.IdRef="Sequence_28">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Assign BusinessException" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_25">
+                      <Assign DisplayName="Assign BusinessException" sap:VirtualizedContainerService.HintSize="438,114" sap2010:WorkflowViewState.IdRef="Assign_25">
                         <Assign.To>
                           <OutArgument x:TypeArguments="ui:BusinessRuleException">[BusinessException]</OutArgument>
                         </Assign.To>
@@ -287,13 +287,13 @@
                           <InArgument x:TypeArguments="ui:BusinessRuleException">[Nothing]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Process workflow" sap:VirtualizedContainerService.HintSize="434,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="Framework\Process.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Process workflow" sap:VirtualizedContainerService.HintSize="438,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="Framework\Process.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[TransactionItem]</InArgument>
                           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
-                      <TryCatch DisplayName="Try Catch Set Transaction Status (Success)" sap:VirtualizedContainerService.HintSize="434,207" sap2010:WorkflowViewState.IdRef="TryCatch_10">
+                      <TryCatch DisplayName="Try Catch Set Transaction Status (Success)" sap:VirtualizedContainerService.HintSize="438,423" sap2010:WorkflowViewState.IdRef="TryCatch_10">
                         <TryCatch.Try>
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SetTransactionStatus (Success)" sap:VirtualizedContainerService.HintSize="334,172" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="Framework\SetTransactionStatus.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
@@ -311,7 +311,7 @@
                           </ui:InvokeWorkflowFile>
                         </TryCatch.Try>
                         <TryCatch.Catches>
-                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22" sap2010:WorkflowViewState.IdRef="Catch`1_11">
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_11">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -330,7 +330,7 @@
                     </Sequence>
                   </TryCatch.Try>
                   <TryCatch.Catches>
-                    <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="472,22" sap2010:WorkflowViewState.IdRef="Catch`1_9">
+                    <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="476,22" sap2010:WorkflowViewState.IdRef="Catch`1_9">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -348,7 +348,7 @@
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign DisplayName="Set transaction status to BusinessRuleException" sap:VirtualizedContainerService.HintSize="433.6,69.6" sap2010:WorkflowViewState.IdRef="Assign_26">
+                          <Assign DisplayName="Set transaction status to BusinessRuleException" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_26">
                             <Assign.To>
                               <OutArgument x:TypeArguments="ui:BusinessRuleException">[BusinessException]</OutArgument>
                             </Assign.To>
@@ -399,7 +399,7 @@
                         </Sequence>
                       </ActivityAction>
                     </Catch>
-                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="472,22" sap2010:WorkflowViewState.IdRef="Catch`1_10">
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="476,22" sap2010:WorkflowViewState.IdRef="Catch`1_10">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -486,9 +486,9 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <Transition.Condition>[SystemException IsNot Nothing]</Transition.Condition>
                   <Transition.To>
-                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="790,4357" sap2010:WorkflowViewState.IdRef="State_2">
+                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="738,4217" sap2010:WorkflowViewState.IdRef="State_2">
                       <State.Entry>
-                        <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="744,3938" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                        <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="692,3798" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -496,7 +496,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <TryCatch.Try>
-                            <Sequence DisplayName="Load configurations and open applications" sap:VirtualizedContainerService.HintSize="706,3710" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                            <Sequence DisplayName="Load configurations and open applications" sap:VirtualizedContainerService.HintSize="654,3570" sap2010:WorkflowViewState.IdRef="Sequence_4">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:String" Name="NouvelleDate_JJ_MM_YYYY" />
                                 <Variable x:TypeArguments="x:String" Name="NouvelleDate_Month_FR_Majuscule" />
@@ -517,7 +517,7 @@
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Assign DisplayName="Assign SystemException (initialization)" sap:VirtualizedContainerService.HintSize="672,114" sap2010:WorkflowViewState.IdRef="Assign_5">
+                              <Assign DisplayName="Assign SystemException (initialization)" sap:VirtualizedContainerService.HintSize="620,114" sap2010:WorkflowViewState.IdRef="Assign_5">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="s:Exception">[SystemException]</OutArgument>
                                 </Assign.To>
@@ -525,7 +525,7 @@
                                   <InArgument x:TypeArguments="s:Exception">[Nothing]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <If sap2010:Annotation.AnnotationText="An uninitialized Config dictionary indicates that it is the first run of the process." Condition="[Config is Nothing]" DisplayName="If first run, read local configuration file" sap:VirtualizedContainerService.HintSize="672,114" sap2010:WorkflowViewState.IdRef="If_1">
+                              <If sap2010:Annotation.AnnotationText="An uninitialized Config dictionary indicates that it is the first run of the process." Condition="[Config is Nothing]" DisplayName="If first run, read local configuration file" sap:VirtualizedContainerService.HintSize="620,114" sap2010:WorkflowViewState.IdRef="If_1">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -623,7 +623,7 @@
                                   <Sequence DisplayName="Else" sap2010:WorkflowViewState.IdRef="Sequence_31" />
                                 </If.Else>
                               </If>
-                              <If sap2010:Annotation.AnnotationText="If MaxConsecutiveSystemExceptions number was reached, throw Exception at initialization and go to End Process state, thus finalizing the execution. &#xA;If MaxConsecutiveSystemExceptions is 0, then any number of consecutive System Exceptions is allowed." Condition="[Cint(Config(&quot;MaxConsecutiveSystemExceptions&quot;))&gt;0 AndAlso ConsecutiveSystemExceptions&gt;=Cint(Config(&quot;MaxConsecutiveSystemExceptions&quot;))]" DisplayName="If maxConsecutiveSystemExceptions exceeded" sap:VirtualizedContainerService.HintSize="672,249" sap2010:WorkflowViewState.IdRef="If_13">
+                              <If sap2010:Annotation.AnnotationText="If MaxConsecutiveSystemExceptions number was reached, throw Exception at initialization and go to End Process state, thus finalizing the execution. &#xA;If MaxConsecutiveSystemExceptions is 0, then any number of consecutive System Exceptions is allowed." Condition="[Cint(Config(&quot;MaxConsecutiveSystemExceptions&quot;))&gt;0 AndAlso ConsecutiveSystemExceptions&gt;=Cint(Config(&quot;MaxConsecutiveSystemExceptions&quot;))]" DisplayName="If maxConsecutiveSystemExceptions exceeded" sap:VirtualizedContainerService.HintSize="620,249" sap2010:WorkflowViewState.IdRef="If_13">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -644,7 +644,7 @@
                                   </Sequence>
                                 </If.Else>
                               </If>
-                              <Sequence DisplayName="Calcul_NouvelleDate" sap:VirtualizedContainerService.HintSize="672,57" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                              <Sequence DisplayName="Calcul_NouvelleDate" sap:VirtualizedContainerService.HintSize="620,57" sap2010:WorkflowViewState.IdRef="Sequence_33">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="sd:DataTable" Name="DT_Calendrier" />
                                 </Sequence.Variables>
@@ -778,7 +778,7 @@
                                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,173" sap2010:WorkflowViewState.IdRef="LogMessage_37" Message="[&quot;Derniere Date : &quot; + Derniere_Date_JJ_MM_YYYY]" />
                                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,164" sap2010:WorkflowViewState.IdRef="LogMessage_38" Message="[&quot;Nouvelle Date : &quot; + NouvelleDate_JJ_MM_YYYY]" />
                               </Sequence>
-                              <If Condition="[Datetime.ParseExact(NouvelleDate_JJ_MM_YYYY,&quot;dd-MM-yyyy&quot;,System.Globalization.CultureInfo.InvariantCulture)&gt;Datetime.ParseExact(Derniere_Date_JJ_MM_YYYY,&quot;dd-MM-yyyy&quot;,System.Globalization.CultureInfo.InvariantCulture)]" DisplayName="If _ Verification_DerniereDate VS NouvelleDate" sap:VirtualizedContainerService.HintSize="672,2921" sap2010:WorkflowViewState.IdRef="If_15">
+                              <If Condition="[Datetime.ParseExact(NouvelleDate_JJ_MM_YYYY,&quot;dd-MM-yyyy&quot;,System.Globalization.CultureInfo.InvariantCulture)&gt;Datetime.ParseExact(Derniere_Date_JJ_MM_YYYY,&quot;dd-MM-yyyy&quot;,System.Globalization.CultureInfo.InvariantCulture)]" DisplayName="If _ Verification_DerniereDate VS NouvelleDate" sap:VirtualizedContainerService.HintSize="620,2781" sap2010:WorkflowViewState.IdRef="If_15">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -786,14 +786,14 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <If.Then>
-                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="638,2662" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="586,2522" sap2010:WorkflowViewState.IdRef="Sequence_46">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Sequence DisplayName="Verification_Input" sap:VirtualizedContainerService.HintSize="604,2602" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                    <Sequence DisplayName="Verification_Input" sap:VirtualizedContainerService.HintSize="552,2462" sap2010:WorkflowViewState.IdRef="Sequence_34">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="x:Boolean" Name="FolderExists" />
                                         <Variable x:TypeArguments="x:String" Name="FolderInexistant">
@@ -816,6 +816,7 @@
                                         <Variable x:TypeArguments="x:String" Name="Compte_A_Parcourir" />
                                         <Variable x:TypeArguments="x:Boolean" Name="ERB_FolderExists" />
                                         <Variable x:TypeArguments="x:Boolean" Name="DossierInput_Existe" />
+                                        <Variable x:TypeArguments="x:String" Name="Statut" />
                                       </Sequence.Variables>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -823,9 +824,9 @@
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:FolderExistsX DisplayName="Folder Exists" Exists="[DossierInput_Existe]" sap:VirtualizedContainerService.HintSize="570,165" sap2010:WorkflowViewState.IdRef="FolderExistsX_3" Path="[Config(&quot;Chemin_Input&quot;).ToString.TrimEnd(&quot;\&quot;c) + &quot;\&quot;+ NouvelleDate_JJMMYY]" />
-                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="570,173" sap2010:WorkflowViewState.IdRef="LogMessage_41" Message="[&quot;Dossier : &quot; + Config(&quot;Chemin_Input&quot;).ToString.TrimEnd(&quot;\&quot;c) + &quot;\&quot;+ NouvelleDate_JJMMYY + &quot; Déposé: &quot;+ DossierInput_Existe.ToString]" />
-                                      <If Condition="[DossierInput_Existe]" sap:VirtualizedContainerService.HintSize="570,2181" sap2010:WorkflowViewState.IdRef="If_21">
+                                      <ui:FolderExistsX DisplayName="Folder Exists" Exists="[DossierInput_Existe]" sap:VirtualizedContainerService.HintSize="518,165" sap2010:WorkflowViewState.IdRef="FolderExistsX_3" Path="[Config(&quot;Chemin_Input&quot;).ToString.TrimEnd(&quot;\&quot;c) + &quot;\&quot;+ NouvelleDate_JJMMYY]" />
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,173" sap2010:WorkflowViewState.IdRef="LogMessage_41" Message="[&quot;Dossier : &quot; + Config(&quot;Chemin_Input&quot;).ToString.TrimEnd(&quot;\&quot;c) + &quot;\&quot;+ NouvelleDate_JJMMYY + &quot; Déposé: &quot;+ DossierInput_Existe.ToString]" />
+                                      <If Condition="[DossierInput_Existe]" sap:VirtualizedContainerService.HintSize="518,2041" sap2010:WorkflowViewState.IdRef="If_21">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -833,7 +834,7 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <If.Then>
-                                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="536,1995" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484,1285" sap2010:WorkflowViewState.IdRef="Sequence_48">
                                             <Sequence.Variables>
                                               <Variable x:TypeArguments="x:Boolean" Name="FichierPos_Existe" />
                                               <Variable x:TypeArguments="x:Boolean" Name="FichierBilan_Existe" />
@@ -845,13 +846,13 @@
                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:FileExistsX DisplayName="File Exists" Exists="[FichierPos_Existe]" sap:VirtualizedContainerService.HintSize="502,165" sap2010:WorkflowViewState.IdRef="FileExistsX_5" Path="[Config(&quot;Chemin_Input&quot;).ToString.TrimEnd(&quot;\&quot;c) + &quot;\&quot;+ NouvelleDate_JJMMYY +&quot;\POS CHANGE &quot;+NouvelleDate_JJ_MM_YY_AvecEspace+&quot;.xlsx&quot;]" />
-                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="502,173" sap2010:WorkflowViewState.IdRef="LogMessage_49" Message="[&quot;Fichier : &quot; + Config(&quot;Chemin_Input&quot;).ToString.TrimEnd(&quot;\&quot;c) + &quot;\&quot;+ NouvelleDate_JJMMYY +&quot;\POS CHANGE &quot;+NouvelleDate_JJ_MM_YY_AvecEspace+&quot;.xlsx&quot;  + &quot;  Existe: &quot; + FichierPos_Existe.ToString]" />
-                                            <ui:FileExistsX DisplayName="File Exists" Exists="[FichierBilan_Existe]" sap:VirtualizedContainerService.HintSize="502,165" sap2010:WorkflowViewState.IdRef="FileExistsX_7" Path="[Config(&quot;Chemin_Input&quot;).ToString.TrimEnd(&quot;\&quot;c) + &quot;\&quot;+ NouvelleDate_JJMMYY +&quot;\Bilan &quot;+NouvelleDate_JJ_MM_YY_AvecEspace+&quot;.xls&quot;]" />
-                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="502,173" sap2010:WorkflowViewState.IdRef="LogMessage_52" Message="[&quot;Fichier : &quot; +Config(&quot;Chemin_Input&quot;).ToString.TrimEnd(&quot;\&quot;c) + &quot;\&quot;+ NouvelleDate_JJMMYY +&quot;\Bilan &quot;+NouvelleDate_JJ_MM_YY_AvecEspace+&quot;.xls&quot;  + &quot;  Existe: &quot; + FichierBilan_Existe.ToString]" />
-                                            <ui:FileExistsX DisplayName="File Exists" Exists="[FichierCloture_Existe]" sap:VirtualizedContainerService.HintSize="502,165" sap2010:WorkflowViewState.IdRef="FileExistsX_8" Path="[Config(&quot;Chemin_Input&quot;).ToString.TrimEnd(&quot;\&quot;c) + &quot;\&quot;+ NouvelleDate_JJMMYY +&quot;\cloture equity &quot;+NouvelleDate_JJ_MM_YY_AvecEspace+&quot;.xlsx&quot;]" />
-                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="502,173" sap2010:WorkflowViewState.IdRef="LogMessage_53" Message="[&quot;Fichier : &quot; + Config(&quot;Chemin_Input&quot;).ToString.TrimEnd(&quot;\&quot;c) + &quot;\&quot;+ NouvelleDate_JJMMYY +&quot;\cloture equity &quot;+NouvelleDate_JJ_MM_YY_AvecEspace+&quot;.xlsx&quot;  + &quot;  Existe: &quot; + FichierCloture_Existe.ToString]" />
-                                            <If Condition="[not FichierPos_Existe  or not FichierBilan_Existe  or not FichierCloture_Existe]" sap:VirtualizedContainerService.HintSize="502,921" sap2010:WorkflowViewState.IdRef="If_23">
+                                            <ui:FileExistsX DisplayName="File Exists" Exists="[FichierPos_Existe]" sap:VirtualizedContainerService.HintSize="450,165" sap2010:WorkflowViewState.IdRef="FileExistsX_5" Path="[Config(&quot;Chemin_Input&quot;).ToString.TrimEnd(&quot;\&quot;c) + &quot;\&quot;+ NouvelleDate_JJMMYY +&quot;\POS CHANGE &quot;+NouvelleDate_JJ_MM_YY_AvecEspace+&quot;.xlsx&quot;]" />
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,173" sap2010:WorkflowViewState.IdRef="LogMessage_49" Message="[&quot;Fichier : &quot; + Config(&quot;Chemin_Input&quot;).ToString.TrimEnd(&quot;\&quot;c) + &quot;\&quot;+ NouvelleDate_JJMMYY +&quot;\POS CHANGE &quot;+NouvelleDate_JJ_MM_YY_AvecEspace+&quot;.xlsx&quot;  + &quot;  Existe: &quot; + FichierPos_Existe.ToString]" />
+                                            <ui:FileExistsX DisplayName="File Exists" Exists="[FichierBilan_Existe]" sap:VirtualizedContainerService.HintSize="450,165" sap2010:WorkflowViewState.IdRef="FileExistsX_7" Path="[Config(&quot;Chemin_Input&quot;).ToString.TrimEnd(&quot;\&quot;c) + &quot;\&quot;+ NouvelleDate_JJMMYY +&quot;\Bilan &quot;+NouvelleDate_JJ_MM_YY_AvecEspace+&quot;.xls&quot;]" />
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,173" sap2010:WorkflowViewState.IdRef="LogMessage_52" Message="[&quot;Fichier : &quot; +Config(&quot;Chemin_Input&quot;).ToString.TrimEnd(&quot;\&quot;c) + &quot;\&quot;+ NouvelleDate_JJMMYY +&quot;\Bilan &quot;+NouvelleDate_JJ_MM_YY_AvecEspace+&quot;.xls&quot;  + &quot;  Existe: &quot; + FichierBilan_Existe.ToString]" />
+                                            <ui:FileExistsX DisplayName="File Exists" Exists="[FichierCloture_Existe]" sap:VirtualizedContainerService.HintSize="450,165" sap2010:WorkflowViewState.IdRef="FileExistsX_8" Path="[Config(&quot;Chemin_Input&quot;).ToString.TrimEnd(&quot;\&quot;c) + &quot;\&quot;+ NouvelleDate_JJMMYY +&quot;\cloture equity &quot;+NouvelleDate_JJ_MM_YY_AvecEspace+&quot;.xlsx&quot;]" />
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,173" sap2010:WorkflowViewState.IdRef="LogMessage_53" Message="[&quot;Fichier : &quot; + Config(&quot;Chemin_Input&quot;).ToString.TrimEnd(&quot;\&quot;c) + &quot;\&quot;+ NouvelleDate_JJMMYY +&quot;\cloture equity &quot;+NouvelleDate_JJ_MM_YY_AvecEspace+&quot;.xlsx&quot;  + &quot;  Existe: &quot; + FichierCloture_Existe.ToString]" />
+                                            <If Condition="[not FichierPos_Existe  or not FichierBilan_Existe  or not FichierCloture_Existe]" sap:VirtualizedContainerService.HintSize="450,211" sap2010:WorkflowViewState.IdRef="If_23">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -859,10 +860,10 @@
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                               <If.Then>
-                                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,369" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_53">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
@@ -874,7 +875,7 @@
                                                       <InArgument x:TypeArguments="x:String" xml:space="preserve">[If(Not FichierPos_Existe,"POS CHANGE "+NouvelleDate_JJ_MM_YY_AvecEspace+".xlsx","")+   If(Not FichierBilan_Existe,", Bilan "+NouvelleDate_JJ_MM_YY_AvecEspace+".xls","") + If(Not FichierCloture_Existe,", cloture equity "+NouvelleDate_JJ_MM_YY_AvecEspace+".xlsx","").Replace(",,",",").Trim(","c)]</InArgument>
                                                     </Assign.Value>
                                                   </Assign>
-                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Envoie_Mail - Invoke Workflow File (Mail\Envoie_Mail.xaml)" sap:VirtualizedContainerService.HintSize="434,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_34" UnSafe="False" WorkflowFileName="Mail\Envoie_Mail.xaml">
+                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Envoie_Mail - Invoke Workflow File (Mail\Envoie_Mail.xaml)" sap:VirtualizedContainerService.HintSize="434,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_34" UnSafe="False" WorkflowFileName="Mail\Envoie_Mail.xaml">
                                                     <ui:InvokeWorkflowFile.Arguments>
                                                       <InArgument x:TypeArguments="x:String" x:Key="in_MailTo">[config("Mail_Metier").ToString]</InArgument>
                                                       <InArgument x:TypeArguments="x:String" x:Key="in_MailSubject">[config("Objet_Mail_Alert").ToString]</InArgument>
@@ -883,19 +884,53 @@
                                                       <InArgument x:TypeArguments="x:String" x:Key="in_MailCC">[config("Mail_cc").ToString]</InArgument>
                                                     </ui:InvokeWorkflowFile.Arguments>
                                                   </ui:InvokeWorkflowFile>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_47">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[Statut]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">Traitement VAR</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="434,217" sap2010:WorkflowViewState.IdRef="AddQueueItem_3" Priority="Normal" QueueType="Risk_StressTest" Reference="[NouvelleDate_JJ_MM_YYYY+ &quot;_&quot; +Statut]">
+                                                    <ui:AddQueueItem.ItemInformation>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="Chemin POS">[Config("Chemin_Input").ToString.TrimEnd("\"c) + "\"+ NouvelleDate_JJMMYY +"\POS CHANGE "+NouvelleDate_JJ_MM_YY_AvecEspace+".xlsx"]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="Chemin Bilan BAM">[Config("Chemin_Input").ToString.TrimEnd("\"c) + "\"+ NouvelleDate_JJMMYY +"\Bilan "+NouvelleDate_JJ_MM_YY_AvecEspace+".xls"]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="CHemin Cloture equity">[Config("Chemin_Input").ToString.TrimEnd("\"c) + "\"+ NouvelleDate_JJMMYY +"\cloture equity "+NouvelleDate_JJ_MM_YY_AvecEspace+".xlsx"]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="NouvelleDate_JJMMYY">[NouvelleDate_JJMMYY]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="NouvelleDate_JJ_MM_YYYY">[NouvelleDate_JJ_MM_YYYY]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="NouvelleDate_Mois_FR">[NouvelleDate_Month_FR_CapitalLetter]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="NouvelleDate_YYYY_MM_JJ">[NouvelleDate_YYYY_MM_JJ]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="DerniereDate_JJMMYY">[DerniereDate_JJMMYY]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="DerniereDate_JJ_MM_YYYY">[Derniere_Date_JJ_MM_YYYY]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="DerniereDate_Mois_FR">[DerniereDate_Month_Fr_CapitalLetter]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="DerniereDate_Fomule_StressTest">[Derniere_Date_JJ_MM_YYYY.split("-"c)(2)+"\"+DerniereDate_Month_Fr_CapitalLetter+"\["+Derniere_Date_JJ_MM_YYYY+" -VAR.xls]"]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="NouvelleDate_Formule_StressTest">[NouvelleDate_JJ_MM_YYYY.split("-"c)(2)+"\"+NouvelleDate_Month_FR_CapitalLetter+"\["+NouvelleDate_JJ_MM_YYYY+" -VAR.xls]"]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="Statut">[Statut]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="Fichier_MO">Manquant</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="Fichier_EQ">[if(FichierCloture_Existe,"Existe","Manquant")]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="Fichier_POS">[if(FichierPos_Existe,"Existe","Manquant")]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="Fichier_BAM">[if(FichierBilan_Existe,"Existe","Manquant")]</InArgument>
+                                                    </ui:AddQueueItem.ItemInformation>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </ui:AddQueueItem>
                                                 </Sequence>
                                               </If.Then>
                                               <If.Else>
-                                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,391" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_52">
                                                   <Sequence.Variables>
                                                     <Variable x:TypeArguments="x:String" Name="text_Montant" />
                                                     <Variable x:TypeArguments="x:String" Name="Montant_Sage" />
                                                     <Variable x:TypeArguments="x:String" Name="Montant_BO" />
-                                                    <Variable x:TypeArguments="x:String" Name="Statut" />
                                                   </Sequence.Variables>
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
@@ -922,6 +957,10 @@
                                                       <InArgument x:TypeArguments="x:String" x:Key="DerniereDate_Fomule_StressTest">[Derniere_Date_JJ_MM_YYYY.split("-"c)(2)+"\"+DerniereDate_Month_Fr_CapitalLetter+"\["+Derniere_Date_JJ_MM_YYYY+" -VAR.xls]"]</InArgument>
                                                       <InArgument x:TypeArguments="x:String" x:Key="NouvelleDate_Formule_StressTest">[NouvelleDate_JJ_MM_YYYY.split("-"c)(2)+"\"+NouvelleDate_Month_FR_CapitalLetter+"\["+NouvelleDate_JJ_MM_YYYY+" -VAR.xls]"]</InArgument>
                                                       <InArgument x:TypeArguments="x:String" x:Key="Statut">[Statut]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="Fichier_MO">Existe</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="Fichier_EQ">Existe</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="Fichier_POS">Existe</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="Fichier_BAM">Existe</InArgument>
                                                     </ui:AddQueueItem.ItemInformation>
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -936,10 +975,10 @@
                                           </Sequence>
                                         </If.Then>
                                         <If.Else>
-                                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,595" sap2010:WorkflowViewState.IdRef="Sequence_49">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
@@ -957,6 +996,33 @@
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                             </Assign>
+                                            <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="434,226" sap2010:WorkflowViewState.IdRef="AddQueueItem_4" Priority="Normal" QueueType="Risk_StressTest" Reference="[NouvelleDate_JJ_MM_YYYY+ &quot;_&quot; +Statut]">
+                                              <ui:AddQueueItem.ItemInformation>
+                                                <InArgument x:TypeArguments="x:String" x:Key="Chemin POS">[Config("Chemin_Input").ToString.TrimEnd("\"c) + "\"+ NouvelleDate_JJMMYY +"\POS CHANGE "+NouvelleDate_JJ_MM_YY_AvecEspace+".xlsx"]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="Chemin Bilan BAM">[Config("Chemin_Input").ToString.TrimEnd("\"c) + "\"+ NouvelleDate_JJMMYY +"\Bilan "+NouvelleDate_JJ_MM_YY_AvecEspace+".xls"]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="CHemin Cloture equity">[Config("Chemin_Input").ToString.TrimEnd("\"c) + "\"+ NouvelleDate_JJMMYY +"\cloture equity "+NouvelleDate_JJ_MM_YY_AvecEspace+".xlsx"]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="NouvelleDate_JJMMYY">[NouvelleDate_JJMMYY]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="NouvelleDate_JJ_MM_YYYY">[NouvelleDate_JJ_MM_YYYY]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="NouvelleDate_Mois_FR">[NouvelleDate_Month_FR_CapitalLetter]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="NouvelleDate_YYYY_MM_JJ">[NouvelleDate_YYYY_MM_JJ]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="DerniereDate_JJMMYY">[DerniereDate_JJMMYY]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="DerniereDate_JJ_MM_YYYY">[Derniere_Date_JJ_MM_YYYY]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="DerniereDate_Mois_FR">[DerniereDate_Month_Fr_CapitalLetter]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="DerniereDate_Fomule_StressTest">[Derniere_Date_JJ_MM_YYYY.split("-"c)(2)+"\"+DerniereDate_Month_Fr_CapitalLetter+"\["+Derniere_Date_JJ_MM_YYYY+" -VAR.xls]"]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="NouvelleDate_Formule_StressTest">[NouvelleDate_JJ_MM_YYYY.split("-"c)(2)+"\"+NouvelleDate_Month_FR_CapitalLetter+"\["+NouvelleDate_JJ_MM_YYYY+" -VAR.xls]"]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="Statut">[Statut]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="Fichier_MO">Manquant</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="Fichier_EQ">Manquant</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="Fichier_POS">Manquant</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="Fichier_BAM">Manquant</InArgument>
+                                              </ui:AddQueueItem.ItemInformation>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </ui:AddQueueItem>
                                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Envoie_Mail - Invoke Workflow File (Mail\Envoie_Mail.xaml)" sap:VirtualizedContainerService.HintSize="434,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_33" UnSafe="False" WorkflowFileName="Mail\Envoie_Mail.xaml">
                                               <ui:InvokeWorkflowFile.Arguments>
                                                 <InArgument x:TypeArguments="x:String" x:Key="in_MailTo">[config("Mail_Metier").ToString]</InArgument>
@@ -982,7 +1048,7 @@
                                   </Sequence>
                                 </If.Else>
                               </If>
-                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitiAllApplications workflow" sap:VirtualizedContainerService.HintSize="672,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Framework\InitAllApplications.xaml">
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitiAllApplications workflow" sap:VirtualizedContainerService.HintSize="620,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Framework\InitAllApplications.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
@@ -990,7 +1056,7 @@
                             </Sequence>
                           </TryCatch.Try>
                           <TryCatch.Catches>
-                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="710,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="658,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
